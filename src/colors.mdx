@@ -1,0 +1,25 @@
+---
+name: Colors
+---
+
+import ColorSquare, { ColorsContainer } from './docs-components/ColorSquare';
+import { PrimaryPalette } from './colors';
+
+## Primary Palette
+
+To use one of the official TS color, you can import:
+```
+import { PrimaryPalette } from 'ts-react-shared-components';
+```
+<ColorsContainer>
+  <ColorSquare color={PrimaryPalette.Teal} name="Teal" />
+  <ColorSquare color={PrimaryPalette.Turquoise} name="Turquoise" />
+  <ColorSquare color={PrimaryPalette.Orange} name="Orange" />
+  <ColorSquare color={PrimaryPalette.Yellow} name="Yellow" />
+</ColorsContainer>
+<ColorsContainer>
+  <ColorSquare color={PrimaryPalette.Black} name="Black" />
+  <ColorSquare color={PrimaryPalette.DarkGrey} name="DarkGrey" />
+  <ColorSquare color={PrimaryPalette.MidGrey} name="MidGrey" />
+  <ColorSquare color={PrimaryPalette.Grey} name="Grey" />
+</ColorsContainer>

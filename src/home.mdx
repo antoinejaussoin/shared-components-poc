@@ -1,0 +1,35 @@
+---
+route: /
+name: 'Home'
+---
+
+# TS Shared Components Library
+
+## Install
+
+```
+yarn add ts-react-shared-components
+```
+
+## Dependencies
+
+To use this library, you'll need to have the font-awesome and Lato fonts loaded.
+You can add the following to your app's index.html:
+
+```
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+```
+
+## Global styles
+
+This library comes with a few global styles, that are optional.
+If you want to use them, at the root of your application, add the following component:
+
+```
+import { GlobalStyles } from "ts-react-shared-components";
+
+[...]
+
+<GlobalStyles />
+```

@@ -1,7 +1,7 @@
 import React, { StatelessComponent } from "react";
 import styled, { css } from "styled-components";
 import { noop } from "lodash";
-import { GeneralColor } from "../colors";
+import { PrimaryPalette } from "../colors";
 import { IconPosition } from "../enums";
 import { Icon, IconProps } from "../icon/index";
 
@@ -48,10 +48,10 @@ export interface ButtonProps extends StyledIconProps {
   onClick?: () => void;
 }
 
-const fillColor = GeneralColor.Teal;
-const fillHoverColor = GeneralColor.Turquoise;
-const fillDisabledColor = GeneralColor.Grey;
-const disabledColor = GeneralColor.MidGrey;
+const fillColor = PrimaryPalette.Teal;
+const fillHoverColor = PrimaryPalette.Turquoise;
+const fillDisabledColor = PrimaryPalette.Grey;
+const disabledColor = PrimaryPalette.MidGrey;
 const standardFocusColor = "#e4f2f2";
 
 const StyledIcon = styled<StyledIconProps & IconProps>(Icon)`
@@ -72,7 +72,7 @@ const StyledButton = styled<ButtonProps, "button">("button")`
   padding: 9px 15px;
   border: 1px solid ${fillColor};
   border-radius: 2px;
-  background: ${GeneralColor.White};
+  background: ${PrimaryPalette.White};
   color: ${fillColor};
   font-size: 1.1rem;
   font-weight: 700;
@@ -87,7 +87,7 @@ const StyledButton = styled<ButtonProps, "button">("button")`
   &:hover {
     border-color: ${fillHoverColor};
     background-color: ${fillHoverColor};
-    color: ${GeneralColor.White};
+    color: ${PrimaryPalette.White};
   }
 
   &:disabled {
@@ -107,7 +107,7 @@ const StyledButton = styled<ButtonProps, "button">("button")`
       ? `
     border-color: ${fillColor};
     background-color: ${fillColor};
-    color: ${GeneralColor.White};
+    color: ${PrimaryPalette.White};
     &:focus {
       background-color: ${fillColor};
       outline: ${fillColor} auto 5px;
@@ -123,11 +123,11 @@ const StyledButton = styled<ButtonProps, "button">("button")`
     border: none;
     border-color: initial;
     background-color: initial;
-    color: ${GeneralColor.Turquoise};
+    color: ${PrimaryPalette.Turquoise};
     min-height: 35px;
 
     &:hover {
-      color: ${GeneralColor.Teal};
+      color: ${PrimaryPalette.Teal};
       background-color: initial;
     }
 
@@ -137,7 +137,7 @@ const StyledButton = styled<ButtonProps, "button">("button")`
 
     &:disabled {
       background-color: initial;
-      color: ${GeneralColor.Grey};
+      color: ${PrimaryPalette.Grey};
       cursor: not-allowed;
       pointer-events: none;
     }
