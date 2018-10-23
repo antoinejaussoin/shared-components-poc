@@ -2,8 +2,17 @@ import React, { StatelessComponent } from "react";
 import styled, { css } from "styled-components";
 import { noop } from "lodash";
 import { GeneralColor } from "../colors";
+import { IconPosition } from "../enums";
+import { Icon, IconProps } from "../icon/index";
 
-export interface ButtonProps {
+export interface StyledIconProps {
+  /**
+   * Position of the icon - defaults to left
+   */
+  iconPosition?: IconPosition;
+}
+
+export interface ButtonProps extends StyledIconProps {
   /**
    * Inside text of the button, beside the icon
    */
@@ -44,6 +53,13 @@ const fillHoverColor = GeneralColor.Turquoise;
 const fillDisabledColor = GeneralColor.Grey;
 const disabledColor = GeneralColor.MidGrey;
 const standardFocusColor = "#e4f2f2";
+
+const StyledIcon = styled<StyledIconProps & IconProps>(Icon)`
+  margin-right: ${(props: StyledIconProps) =>
+    props.iconPosition === IconPosition.Left ? "10px" : "0"};
+  margin-left: ${(props: StyledIconProps) =>
+    props.iconPosition === IconPosition.Right ? "10px" : "0"};
+`;
 
 const StyledButton = styled<ButtonProps, "button">("button")`
   ${props => props.theme.global};
@@ -141,6 +157,7 @@ export const Button: StatelessComponent<ButtonProps> = ({
   flat = false,
   dense = false,
   icon = null,
+  iconPosition = IconPosition.Left,
   disabled = false,
   onClick = noop,
   ...restProps
@@ -154,6 +171,7 @@ export const Button: StatelessComponent<ButtonProps> = ({
     disabled={disabled}
     {...restProps}
   >
+    {icon && <StyledIcon type={icon} iconPosition={iconPosition} />}
     <div>{children}</div>
   </StyledButton>
 );
