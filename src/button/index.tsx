@@ -4,22 +4,38 @@ import { noop } from "lodash";
 import { GeneralColor } from "../colors";
 
 export interface ButtonProps {
-  /** Inside text of the button, beside the icon */
+  /**
+   * Inside text of the button, beside the icon
+   */
   children: any;
-  /** You can pass aditional styling directly to the button */
+  /**
+   * You can pass aditional styling directly to the button
+   */
   className?: string;
-  /** Should the button be filled with color (background and border) */
+  /**
+   * Should the button be filled with color (background and border)
+   */
   filled?: boolean;
-  /** Should the button be dense with a smaller height */
+  /**
+   * Should the button be dense with a smaller height
+   */
   dense?: boolean;
-  /** Should the button be flat, no border or background */
+  /**
+   * Should the button be flat, no border or background
+   */
   flat?: boolean;
-  /** @see [Icon](#icon) type. */
+  /**
+   * @see [Icon](#icon) type.
+   */
   icon?: string;
-  /** Should the button be disabled */
+  /**
+   * Should the button be disabled
+   */
   disabled?: boolean;
   type?: string;
-  /** Function to call on click */
+  /**
+   * Function to call on click
+   */
   onClick?: () => void;
 }
 
